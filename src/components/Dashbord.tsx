@@ -339,14 +339,16 @@ function DashboardContent() {
       );
 
       const totalToken: number =
-        Math.round(ethers.utils.formatEther(resTotalToken) * 100) / 100;
+        Math.round(parseInt(ethers.utils.formatEther(resTotalToken)) * 100) /
+        100;
 
       const totalTokenValue: number =
         Math.round(totalToken * 1724.32 * 100) / 100;
 
       const resTotalSupply = await daiContract.totalSupply();
       const totalTokenSupply: number =
-        Math.round(ethers.utils.formatEther(resTotalSupply) * 100) / 100;
+        Math.round(parseInt(ethers.utils.formatEther(resTotalSupply)) * 100) /
+        100;
       const marketVolume = totalTokenSupply * 1724.32;
       const tokenBurned = totalTokenSupply - totalToken;
 
